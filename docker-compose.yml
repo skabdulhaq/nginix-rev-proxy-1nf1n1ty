@@ -6,7 +6,10 @@ services:
     volumes:
       - ./content:/app/content/
   nginx:
-    build: ./Dockerfile.nginx
+    build: 
+      context: ./
+      dockerfile: Dockerfile.nginx
+    container_name: nginx-rev-proxy
     restart: always
     ports:
       - 80:80
