@@ -3,8 +3,11 @@ services:
     image: t1tan/1nf1n1ty-web-frontend:latest
     restart: always
     command: "npm run start"
+    env_file:
+      - ./.env
     volumes:
       - ./content:/app/content/
+      - ./public:/app/public
   nginx:
     build: 
       context: ./
