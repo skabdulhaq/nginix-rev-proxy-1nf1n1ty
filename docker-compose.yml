@@ -5,13 +5,6 @@ services:
     command: "npm run start"
     env_file:
       - ./.env
-    volumes:
-      - type: bind
-        source: ./content 
-        target: /app/content
-      - type: bind
-        source: ./public 
-        target: /app/public 
   nginx:
     build: 
       context: ./
